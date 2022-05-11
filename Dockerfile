@@ -10,6 +10,7 @@ RUN chmod +x /docker-entrypoint.d/00-set-uid-gid.sh
 
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 COPY ./php-fpm.conf /etc/nginx/snippets/php-fpm.conf
+COPY ./auth_basic.conf /etc/nginx/snippets/auth_basic.conf
 
 VOLUME [ "/var/log/nginx" ]
 VOLUME [ "/var/www/html" ]
