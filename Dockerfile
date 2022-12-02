@@ -7,6 +7,8 @@ LABEL org.opencontainers.image.title="wordpress-nginx" \
 
 COPY ./set-uid-gid.sh /docker-entrypoint.d/00-set-uid-gid.sh
 RUN chmod +x /docker-entrypoint.d/00-set-uid-gid.sh
+COPY ./wait-for-upstream.sh /docker-entrypoint.d/10-wait-for-upstream.sh
+RUN chmod +x /docker-entrypoint.d/10-wait-for-upstream.sh
 
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 COPY ./php-fpm.conf /etc/nginx/snippets/php-fpm.conf
