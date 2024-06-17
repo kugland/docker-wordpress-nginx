@@ -1,4 +1,4 @@
-FROM nginx:1.25.4-alpine
+FROM nginx:1.27.0-alpine
 
 LABEL org.opencontainers.image.title="wordpress-nginx" \
       org.opencontainers.image.description="nginx docker image for my WordPress stack" \
